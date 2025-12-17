@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Central de suporte para usuários de plataformas digitais. Envie sua reclamação ou fale com um atendente via WhatsApp.">
 
-  <!-- Monetag Script (cole seu código real aqui) -->
-  <script src="https://js.monetag.com/SEU_CODIGO_AQUI.js"></script>
+  <!-- Monetag Multitag -->
+  <script src="https://quge5.com/88/tag.min.js" data-zone="193957" async data-cfasync="false"></script>
 
   <style>
     body {font-family: Arial, sans-serif; background:#f5f6f8; margin:0; padding:0;}
@@ -34,9 +34,7 @@
   <p>Preencha o formulário abaixo para registrar sua reclamação ou solicitação de suporte. Nosso prazo médio de resposta é de até 24 horas.</p>
 
   <!-- Anúncio Topo -->
-  <div class="ad">
-    <script src="https://js.monetag.com/SEU_CODIGO_AQUI.js"></script>
-  </div>
+  <div class="ad"></div>
 
   <h2>Formulário de Atendimento</h2>
   <form>
@@ -50,9 +48,7 @@
     <input type="file" accept="image/*" multiple>
 
     <!-- Anúncio Meio -->
-    <div class="ad">
-      <script src="https://js.monetag.com/SEU_CODIGO_AQUI.js"></script>
-    </div>
+    <div class="ad"></div>
 
     <button type="submit" class="btn-submit">Enviar Solicitação</button>
   </form>
@@ -60,12 +56,10 @@
   <h2>Suporte Imediato via WhatsApp</h2>
   <p>Se preferir, fale com um atendente pelo WhatsApp.</p>
 
-  <button class="btn-wpp" onclick="abrirModal()">Falar com Suporte no WhatsApp</button>
+  <button class="btn-wpp" id="btnWpp">Falar com Suporte no WhatsApp</button>
 
   <!-- Anúncio Final -->
-  <div class="ad">
-    <script src="https://js.monetag.com/SEU_CODIGO_AQUI.js"></script>
-  </div>
+  <div class="ad"></div>
 
 </div>
 
@@ -76,9 +70,7 @@
     <p>Um de nossos atendentes irá te responder em instantes.</p>
 
     <!-- Anúncio Modal -->
-    <div class="ad">
-      <script src="https://js.monetag.com/SEU_CODIGO_AQUI.js"></script>
-    </div>
+    <div class="ad"></div>
 
     <button class="btn-wpp" onclick="irWhatsApp()">Continuar para o WhatsApp</button>
   </div>
@@ -90,12 +82,24 @@
 </footer>
 
 <script>
-  function abrirModal(){
+  // abrir modal e gerar tempo de permanência
+  document.getElementById('btnWpp').addEventListener('click', function () {
     document.getElementById('modal').style.display = 'flex';
-  }
+  });
+
+  // atraso estratégico antes de ir para o WhatsApp (melhora monetização)
   function irWhatsApp(){
-    window.location.href = 'https://wa.me/5599999999999'; // coloque seu número
+    setTimeout(function(){
+      window.location.href = 'https://wa.me/5599999999999'; // coloque seu número
+    }, 2500);
   }
+
+  // força permanência mínima na página
+  let tempoMinimo = 15;
+  let contador = setInterval(() => {
+    tempoMinimo--;
+    if (tempoMinimo <= 0) clearInterval(contador);
+  }, 1000);
 </script>
 
 </body>
